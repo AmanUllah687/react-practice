@@ -37,6 +37,7 @@ export default function App () {
 */
 
 // Embedding in attributes 
+/*
 import avatar from './avatar.png'
 function Logo(props) {
     const userPic = <image src={avatar} />;
@@ -50,4 +51,41 @@ function App() {
         </div>
     );
 }
+export default App;
+*/
+//
+/*
+import "./App.css"
+import Card from "./Card";
+function App() {
+  return (
+    <div>
+      <h1>Task: Add three Card elements</h1>
+      <Card h2="First Card's h2" h3="First Card's h3" />
+      <Card h2="Second Card's h2" h3="Second Card's h3" />
+      <Card h2="Third Card's h2" h3="Third Card's h3" />
+    </div>
+  );
+}
+export default App;
+*/
+// Eventfull Issues
+/*
+function NumBillboard(props) {
+    return (
+        <>
+        <h1>{prop.num}</h1>
+        </>
+    )
+}
+export default NumBillboard;
+*/
+// Common event handling
+import Btn from "./Btn";
+import "./App.css";
+function App() {
+    return (
+        <Btn />
+    );
+};
 export default App;
