@@ -37,22 +37,21 @@ export default function App () {
 */
 
 // Embedding in attributes 
-/*
-import avatar from './avatar.png'
-function Logo(props) {
-    const userPic = <image src={avatar} />;
-    return userPic;
-};
-function App() {
-    return (
-        <div className="App">
-            <h1>Hello World!</h1>
-            <Logo />
-        </div>
-    );
-}
-export default App;
-*/
+// import avatar from './avatar.png'
+// function Logo(props) {
+//     const userPic = <img src={avatar} />;
+//     return userPic;
+// };
+// function App() {
+//     return (
+//         <div className="App">
+//             <h1>Hello World!</h1>
+//             <Logo />
+//         </div>
+//     );
+// }
+// export default App;
+
 //
 /*
 import "./App.css"
@@ -81,11 +80,21 @@ function NumBillboard(props) {
 export default NumBillboard;
 */
 // Common event handling
-import Btn from "./Btn";
-import "./App.css";
-function App() {
-    return (
-        <Btn />
-    );
-};
-export default App;
+// import Btn from "./Btn";
+// import "./App.css";
+// function App() {
+//     return (
+//         <Btn />
+//     );
+// };
+// export default App;
+
+
+// Use Events 
+ import ModeToggler from "./ModeToggler";
+ function App() {
+     return (
+         <ModeToggler />
+     );
+ };
+  export default App;
