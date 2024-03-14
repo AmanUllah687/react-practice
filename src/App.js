@@ -123,6 +123,9 @@ import ModeToggler from "./ModeToggler";
   
   export default App;
   */
+
+  // Parent-Child data flow
+  /*
   import PromoHeading from "./PromoHeading"
   const  data = {
     heading: "99% of all items!",
@@ -140,3 +143,40 @@ import ModeToggler from "./ModeToggler";
 
  }
  export default Promo;
+ */
+
+
+ //Children and Data
+/*
+ import Child from "./Child";
+ import "./App.css"
+ function App() {
+  const date = new Date();
+  return (
+    <div>
+      <Child message={date.toLocaleTimeString()}/>
+    </div>
+  )
+ }
+ export default App;
+ */
+
+ // Using hooks 
+ // Example 1
+ /*
+import { useState } from "react";
+export default function InputComponent() {
+  const [inputText, setText] = useState('hello');
+  function handleChange(e) {
+    setText(e.target.value);
+
+  }
+  return (
+    <>
+    <input value={inputText} onChange={handleChange} />
+    <p>You typed: {inputText} </p>
+    <button onClick={() => setText('hello')}>reset</button>
+    </>
+  )
+}
+*/
