@@ -90,11 +90,53 @@ export default NumBillboard;
 // export default App;
 
 
-// Use Events 
- import ModeToggler from "./ModeToggler";
+// User Events 
+/*
+import ModeToggler from "./ModeToggler";
  function App() {
+    
      return (
          <ModeToggler />
      );
  };
   export default App;
+  */
+  
+
+  // Dynamic Events
+  /*
+  function App() {
+    function handleClick() {
+      let randomNum = Math.floor(Math.random() * 3) + 1;
+      console.log(randomNum);
+      let userInput = prompt('Type a number');
+      alert(`Computer Number: ${randomNum}, Your Guess: ${userInput}`);
+    }
+    return (
+      <div>
+        <h1>Task: Add a button and handle a click event</h1>
+        <button onClick={handleClick}>Guess the number between 1 and 3.</button>
+  
+      </div>
+    );
+  }
+  
+  export default App;
+  */
+  import PromoHeading from "./PromoHeading"
+  const  data = {
+    heading: "99% of all items!",
+    callToAction: "Everthing must go!"
+   }
+ function Promo() {
+  return (
+    <div>
+      <PromoHeading
+       heading={data.heading}
+      callToAction={data.callToAction}
+      />
+    </div>
+  )
+
+ }
+ export default Promo;
