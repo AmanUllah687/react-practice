@@ -11,6 +11,8 @@ function App() {
 export default App;
 */
 
+import { useRef } from "react";
+
 // Experssions as props 
 /*
 const bool = false;
@@ -180,6 +182,8 @@ export default function InputComponent() {
   )
 }
 */
+// Example 2
+/*
 import { useState } from "react";
 export default function RegisterForm() {
   const [form, setForm] = useState({
@@ -227,3 +231,19 @@ export default function RegisterForm() {
     </>
   );
 }
+*/
+// The use Refhook
+function TextInputWithfocusBotton() {
+ const inputEl = useRef(null);
+ const onButtonClick = () => {
+ inputEl.current.focus();
+ }
+ return (
+  <>
+  <input ref={inputEl} type="text" />
+  <button onClick={onButtonClick}>Focus the input</button>
+  </>
+ );
+
+}
+ export default TextInputWithfocusBotton;
