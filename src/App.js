@@ -233,6 +233,7 @@ export default function RegisterForm() {
 }
 */
 // The use Refhook
+/*
 function TextInputWithfocusBotton() {
  const inputEl = useRef(null);
  const onButtonClick = () => {
@@ -244,6 +245,61 @@ function TextInputWithfocusBotton() {
   <button onClick={onButtonClick}>Focus the input</button>
   </>
  );
-
 }
  export default TextInputWithfocusBotton;
+ */
+// Observing State 
+/*
+import React, {useState} from "react";
+import Heading from './Heading'
+function App() {
+  const [Word, setWord] = React.useState('eat');
+  function handleClick() {
+    setWord('Drink');
+  }
+  return (
+    <div className="App">
+      <Heading message={Word + " at little lemon"}></Heading>
+      <button onClick={handleClick}>Click here</button>
+    </div>
+  );
+}
+export default App;
+*/
+// prop drilling
+function Main(props) {
+  return (
+    <Header msg={props.msg} />
+  );
+};
+function Header(props) {
+  return (
+    <div style={{border: "10px solid whitesmoke"}}>
+      <h1>Header here</h1>
+      <Wrapper msg={props.msg} /> 
+    </div>
+  );
+};
+function Wrapper(props) {
+ return (
+  <div style={{border: "10px solid lightgray"}}>
+    <h2>Wrapper here</h2>
+    <Button msg={props.msg} />
+  </div>
+ )
+}
+function Button(props) {
+  return (
+    <div style={{ border: "20px solid Orange"}}>
+      <h3>This is Button Component</h3>
+      <button onClick={() => alert(props.msg)}>Click me!</button>
+    </div>
+  );
+};
+function App() {
+  return (
+    <Main msg="I passed through the Header and Wraaper and I reached the button component"
+      />
+  );
+  };
+  export default App;
