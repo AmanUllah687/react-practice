@@ -267,6 +267,7 @@ function App() {
 export default App;
 */
 // prop drilling
+/*
 function Main(props) {
   return (
     <Header msg={props.msg} />
@@ -303,3 +304,19 @@ function App() {
   );
   };
   export default App;
+  */
+ // React State Management 
+ import MealsProvider from "./MealsProvider";
+ import MealsList from "./MealsList";
+ import Counter from "./Counter";
+ function App() {
+  return (
+    <div>
+    <MealsProvider>
+      <MealsList />
+      <Counter />
+    </MealsProvider>
+    </div>
+  );
+ }
+ export default App;
