@@ -309,6 +309,7 @@ function App() {
  import MealsProvider from "./MealsProvider";
  import MealsList from "./MealsList";
  import Counter from "./Counter";
+ 
  function App() {
   return (
     <div>
