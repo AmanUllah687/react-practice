@@ -12,6 +12,8 @@ export default App;
 */
 
 import { useRef } from "react";
+import Workdays from "./Workdays";
+import Weekends from "./Weekends";
 
 // Experssions as props 
 /*
@@ -343,8 +345,11 @@ function App() {
 };
 export default App;
 */
+// NAvbars 
+/*
 import Homepage from "./HomePage";
 import AboutMe from "./AboutMe";
+import Contact from "./Contact";
 import { Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
@@ -352,13 +357,35 @@ function App() {
       <nav className="Nav">
       <Link to="/" className="nav-item">HomePage</Link>
       <Link to="/about-me" className="nav-item">About Me</Link>
+      <Link to="/contact-me" className="nav-item">Contact</Link>
       
       </nav>
       <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/about-me" element={<AboutMe />} />
+      <Route path="/contact-me" element={<Contact />} />
       </Routes>
     </div>
   );
 };
 export default App;
+*/
+/*
+import Workdays from "./Workdays";
+import Weekends from "./Weekends";
+function CurrentMessage() {
+      const day = new Date().getDay();
+      if (day >= 1 && day <= 5) {
+          return <Workdays />
+      }
+      return <Weekends />
+  }
+export default CurrentMessage;
+*/
+function CurrentMessage(props) {
+      if (props.day >= 1 && props.day <= 5) {
+          return <Workdays />
+      }
+      return <Weekends />
+  }
+  export default CurrentMessage;
