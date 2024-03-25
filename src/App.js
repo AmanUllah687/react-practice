@@ -323,6 +323,7 @@ function App() {
  }
  export default App;
  */
+/*
  import React from "react";
 import Fruits from "./Fruits";
 import FruitsCounter from "./FruitsCounter";
@@ -337,6 +338,26 @@ function App() {
       <h1>Where should the State go?</h1>
       <Fruits fruits={fruits} />
       <FruitsCounter fruits={fruits} />
+    </div>
+  );
+};
+export default App;
+*/
+import Homepage from "./HomePage";
+import AboutMe from "./AboutMe";
+import { Routes, Route, Link } from "react-router-dom";
+function App() {
+  return (
+    <div className="App">
+      <nav className="Nav">
+      <Link to="/" className="nav-item">HomePage</Link>
+      <Link to="/about-me" className="nav-item">About Me</Link>
+      
+      </nav>
+      <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/about-me" element={<AboutMe />} />
+      </Routes>
     </div>
   );
 };
