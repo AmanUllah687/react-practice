@@ -10,11 +10,6 @@ function App() {
 };
 export default App;
 */
-
-import { useRef } from "react";
-import Workdays from "./Workdays";
-import Weekends from "./Weekends";
-
 // Experssions as props 
 /*
 const bool = false;
@@ -371,6 +366,7 @@ function App() {
 export default App;
 */
 /*
+// Conditional Rendering 
 import Workdays from "./Workdays";
 import Weekends from "./Weekends";
 function CurrentMessage() {
@@ -382,10 +378,50 @@ function CurrentMessage() {
   }
 export default CurrentMessage;
 */
+/*
 function CurrentMessage(props) {
+       const day = new Date().getDay();
       if (props.day >= 1 && props.day <= 5) {
           return <Workdays />
       }
       return <Weekends />
   }
   export default CurrentMessage;
+*/
+/*
+import Workdays from "./Workdays";
+import Weekends from "./Weekends";
+import ErrorComponent from "./ErrorComponent";
+function CurrentMessage({day}) {
+      const weekday = (day >= 1 && day <= 5);
+      const weekend = (day >= 6 && day <= 7);
+      let message;
+  
+      if (weekday) {
+          message = <Workdays />
+      } else if (weekend) {
+          message = <Weekends />
+      } else {
+          message = <ErrorComponent />
+      }
+  
+      return (
+          <div>
+              {message}
+          </div>
+      )
+  }
+export default CurrentMessage;
+*/
+function LogicalAndExample() {
+  const val = prompt('Anything but 0');
+  return (
+    <div>
+      <h1>Please don't type in 0</h1>
+      {val && <h2>yay, no zero was typed in!</h2>}
+    </div>
+  )
+}
+export default LogicalAndExample;
+true && console.log('This will show');
+false && console.log('This will never show');
