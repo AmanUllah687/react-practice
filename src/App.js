@@ -428,6 +428,7 @@ true && console.log('This will show');
 false && console.log('This will never show');
 */
 // Conditional components 
+/*
 function App() {
   const time = new Date();
   const day = time.toLocaleString("en-us", {weekday: "long"});
@@ -458,4 +459,87 @@ function App() {
     </div>
   );
 } 
+export default App;
+ */
+// using Embeded Assests
+/*
+import rooftops from "./assests/images/avatar.png"
+function App() {
+  const randomImageUrl = "https://img.freepik.com/free-photo/photographer-using-laptop_23-2148019151.jpg?w=740&t=st=1711518256~exp=1711518856~hmac=8a8bc600b80f4b134dfa96f1bcabefdf0efd3e6320278168222cd880c3b85baa";
+  return (
+    <div>
+      <h1>Task is to Add 3 images</h1>
+      <img height={200} src={rooftops} alt="An image of a avatar"></img>
+      <br/>
+      <img height={200} src={require("./assests/images/Layer 3 (1).png")} alt="An image of layer"></img>
+      <br/>
+      <img src={randomImageUrl} height={170} width={133} alt="An image of keyboard"></img>
+
+    </div>
+
+  );
+}
+export default App;
+*/
+// Media Packages
+/*
+import React  from "react";
+import ReactPlayer from "react-player/youtube";
+const App = () => {
+  return (
+    <div>
+    <MyVideo />
+    </div>
+  );
+}
+const MyVideo = () => {
+ return (
+  <ReactPlayer url="https://youtu.be/h7Tx3eKqtzA?si=RZNcWOGxwFXtM6KN" />
+ );
+}
+export default App;
+*/
+/*
+import ReactPlayer from "react-player";
+function App() {
+  const vidUrl = "https://youtu.be/YaZRwricZQ4?si=7K6gnudCqnoVMTJO";
+  return (
+    <div className="App">
+      <h1>React Player Example</h1>
+      <ReactPlayer 
+      url={vidUrl} 
+      playing={false} 
+      volume={0.5} />
+    </div>
+  );
+}
+export default App;
+*/
+import React from "react";
+function App() {
+  const bird1 = new Audio("https://upload.wikimedia.org/wikipedia/commons/9/9b/Hydroprogne_caspia_-_Caspian_Tern_XC432679.mp3");
+  const bird2 = new Audio("https://upload.wikimedia.org/wikipedia/commons/b/b5/Hydroprogne_caspia_-_Caspian_Tern_XC432881.mp3");
+  function toggle1() {
+    if(bird1.paused){
+      bird1.play();
+    }
+    else {
+      bird1.pause();
+    }
+  };
+  function toggle2() {
+    if(bird2.paused) {
+      bird2.play();
+    } else
+    {
+      bird2.pause();
+    }
+  }
+  return (
+    <div>
+      <button onClick={toggle1}>Caspian tern 1</button>
+      <button onClick={toggle2}>Caspian tern 2</button>
+    </div>
+  );
+}
 export default App;
