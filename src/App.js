@@ -515,6 +515,7 @@ function App() {
 }
 export default App;
 */
+/*
 import React from "react";
 function App() {
   const bird1 = new Audio("https://upload.wikimedia.org/wikipedia/commons/9/9b/Hydroprogne_caspia_-_Caspian_Tern_XC432679.mp3");
@@ -542,4 +543,58 @@ function App() {
     </div>
   );
 }
+export default App;
+*/
+
+// Building A Calculator App
+import { useState, useRef } from "react";
+import "./App.css"
+function App() {
+  const inputRef = useRef(null);
+  const resultRef = useRef(null);
+  const [result, setResult] = useState(0);
+  function plus(e) {
+    e.preventDefault();
+    setResult((result) => result + Number(inputRef.current.value)); 
+  }
+  function minus(e) {
+    e.preventDefault();
+    setResult((result) => result - Number(inputRef.current.value));
+  }
+  function times(e) {
+    e.preventDefault();
+    setResult((result) => result * Number(inputRef.current.value));
+  }
+  function divide(e) {
+    e.preventDefault();
+    setResult((result) => result % Number(inputRef.current.value));
+  }
+  function resetInput(e) {
+    e.preventDefault();
+  }
+  function resetResult(e) {
+   e.preventDefault();
+  }
+  return (
+    <><div className="App">
+      <h1>Simplest Working Calculator</h1>
+    </div><form>
+        <p ref={resultRef}>
+        </p>
+        <input
+          pattern="[0-9"
+          ref={inputRef}
+          type="number"
+          placeholder="Type a number">
+        </input>
+        <button onClick={plus}>add</button>
+        <button onClick={minus}>minus</button>
+        <button oncLICK={times}>times</button>
+        <button onClick={divide}>divide</button>
+        <button onClick={resetInput}>ResetInput</button>
+        <button onClick={resetResult}>ResetResult</button>
+      </form></>
+  )
+}
+
 export default App;
