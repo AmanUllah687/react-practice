@@ -567,29 +567,32 @@ function App() {
   }
   function divide(e) {
     e.preventDefault();
-    setResult((result) => result % Number(inputRef.current.value));
+    setResult((result) => result / Number(inputRef.current.value));
   }
   function resetInput(e) {
     e.preventDefault();
+    inputRef.current.value = "";
   }
   function resetResult(e) {
    e.preventDefault();
+   setResult(0);
   }
   return (
     <><div className="App">
       <h1>Simplest Working Calculator</h1>
     </div><form>
         <p ref={resultRef}>
+        {result}
         </p>
         <input
-          pattern="[0-9"
+          pattern="[0-9]"
           ref={inputRef}
           type="number"
           placeholder="Type a number">
         </input>
         <button onClick={plus}>add</button>
         <button onClick={minus}>minus</button>
-        <button oncLICK={times}>times</button>
+        <button onClicks={times}>times</button>
         <button onClick={divide}>divide</button>
         <button onClick={resetInput}>ResetInput</button>
         <button onClick={resetResult}>ResetResult</button>
